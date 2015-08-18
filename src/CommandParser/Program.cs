@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CommandParser
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             List<Command> _commands = Parse(args);
 
@@ -47,11 +47,10 @@ namespace CommandParser
                         if (_commands.Count > 0 && !(_commands.Last() is Ping))
                             _commands.Last().AddValue(i_args[i].ToString());
                         else
-                            Console.WriteLine("Command <" + i_args[i].ToString() + "> is not supported, use CommandParser.exe /? to see set of allowed commands");
+                            Console.WriteLine("Command <{0}> is not supported, use CommandParser.exe /? to see set of allowed commands", i_args[i].ToString());
                         break;
                 }
             }
-
             return _commands;
         }
     }

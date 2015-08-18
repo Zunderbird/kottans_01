@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
-    <Compile Include="EmptyCommand.cs" />
     <Compile Include="Help.cs" />
     <Compile Include="KeyValue.cs" />
     <Compile Include="Ping.cs" />
