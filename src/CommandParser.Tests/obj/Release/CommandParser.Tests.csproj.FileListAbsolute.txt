@@ -1,0 +1,7 @@
+D:\Ruslana\Github\kottans_01\src\CommandParser.Tests\obj\Release\CommandParser.Tests.csprojResolveAssemblyReference.cache
+D:\Ruslana\Github\kottans_01\src\CommandParser.Tests\bin\Release\CommandParser.Tests.dll
+D:\Ruslana\Github\kottans_01\src\CommandParser.Tests\bin\Release\CommandParser.Tests.pdb
+D:\Ruslana\Github\kottans_01\src\CommandParser.Tests\bin\Release\CommandParser.exe
+D:\Ruslana\Github\kottans_01\src\CommandParser.Tests\bin\Release\CommandParser.pdb
+D:\Ruslana\Github\kottans_01\src\CommandParser.Tests\obj\Release\CommandParser.Tests.dll
+D:\Ruslana\Github\kottans_01\src\CommandParser.Tests\obj\Release\CommandParser.Tests.pdb

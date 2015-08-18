@@ -10,10 +10,10 @@ namespace CommandParser
     {
         public override void Execute()
         {
-            Console.WriteLine("/?, /help, -help \t Provides Help information for CommandParser");
-            Console.WriteLine("-k [key value] \t\t Displays a table of key-value");
-            Console.WriteLine("-ping \t\t\t Pinging");
-            Console.WriteLine("-print <message> \t Print a message");
+            Console.WriteLine("/?, /help, -help \t Provides Help information for CommandParser\n" +
+                              "-k [key value] \t\t Displays a table of key-value\n" +
+                              "-ping \t\t\t Pinging\n" +
+                              "-print <message> \t Print a message");
         }
         public override void AddValue(string i_str)
         {
