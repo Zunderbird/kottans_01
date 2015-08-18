@@ -1,0 +1,9 @@
+D:\Ruslana\CommandParser\CommandParser\bin\Debug\CommandParser.exe.config
+D:\Ruslana\CommandParser\CommandParser\bin\Debug\CommandParser.exe
+D:\Ruslana\CommandParser\CommandParser\bin\Debug\CommandParser.pdb
+D:\Ruslana\CommandParser\CommandParser\obj\Debug\CommandParser.csprojResolveAssemblyReference.cache
+D:\Ruslana\CommandParser\CommandParser\obj\Debug\CommandParser.exe
+D:\Ruslana\CommandParser\CommandParser\obj\Debug\CommandParser.pdb
+D:\Ruslana\Github\kottans_01\src\CommandParser\bin\Debug\CommandParser.exe.config
+D:\Ruslana\Github\kottans_01\src\CommandParser\obj\Debug\CommandParser.exe
+D:\Ruslana\Github\kottans_01\src\CommandParser\obj\Debug\CommandParser.pdb

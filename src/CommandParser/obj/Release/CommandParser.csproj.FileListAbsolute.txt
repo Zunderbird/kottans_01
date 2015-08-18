@@ -1,0 +1,6 @@
+D:\Ruslana\Github\kottans_01\src\CommandParser\bin\Release\CommandParser.exe.config
+D:\Ruslana\Github\kottans_01\src\CommandParser\bin\Release\CommandParser.exe
+D:\Ruslana\Github\kottans_01\src\CommandParser\bin\Release\CommandParser.pdb
+D:\Ruslana\Github\kottans_01\src\CommandParser\obj\Release\CommandParser.csprojResolveAssemblyReference.cache
+D:\Ruslana\Github\kottans_01\src\CommandParser\obj\Release\CommandParser.exe
+D:\Ruslana\Github\kottans_01\src\CommandParser\obj\Release\CommandParser.pdb
