@@ -6,36 +6,36 @@ namespace CommandParser.Tests
     [TestClass]
     public class WhenProgramRuns
     {
-        private string m_consoleOutput;
+        private string _mConsoleOutput;
 
-        private string m_helpText;
-        private string m_pingText;
-        private string [] m_errorText;
+        private string _mHelpText;
+        private string _mPingText;
+        private string [] _mErrorText;
 
-        private System.IO.StringWriter m_writer;
+        private System.IO.StringWriter _mWriter;
 
         [TestInitialize]
         public void Initialize()
         {
-            m_helpText = "/?, /help, -help \t Provides Help information for CommandParser\n" +
+            _mHelpText = "/?, /help, -help \t Provides Help information for CommandParser\n" +
                "-k [key value] \t\t Displays a table of key-value\n" +
                "-ping \t\t\t Pinging\n" +
                "-print <message> \t Print a message";
 
-            m_errorText = new string [] {"Command <", "> is not supported, use CommandParser.exe /? to see set of allowed commands"};
+            _mErrorText = new string [] {"Command <", "> is not supported, use CommandParser.exe /? to see set of allowed commands"};
 
-            m_pingText = "Pinging...";
+            _mPingText = "Pinging...";
 
-            m_writer = new System.IO.StringWriter();
-            Console.SetOut(m_writer);
+            _mWriter = new System.IO.StringWriter();
+            Console.SetOut(_mWriter);
         }
 
         [TestMethod]
         public void TestMethod1()
         {
             Program.Main(new string[0]);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual(m_helpText, m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual(_mHelpText, _mConsoleOutput);
         }
 
         [TestMethod]
@@ -43,8 +43,8 @@ namespace CommandParser.Tests
         {
             string [] _command = {"/?"};
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual(m_helpText, m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual(_mHelpText, _mConsoleOutput);
         }
 
         [TestMethod]
@@ -52,8 +52,8 @@ namespace CommandParser.Tests
         {
             string[] _command = { "/help" };
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual(m_helpText, m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual(_mHelpText, _mConsoleOutput);
         }
 
         [TestMethod]
@@ -61,8 +61,8 @@ namespace CommandParser.Tests
         {
             string[] _command = { "-help" };
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual(m_helpText, m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual(_mHelpText, _mConsoleOutput);
         }
 
         [TestMethod]
@@ -70,8 +70,8 @@ namespace CommandParser.Tests
         {
             string[] _command = { "/?", "asdf" };
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual(m_helpText, m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual(_mHelpText, _mConsoleOutput);
         }
 
         [TestMethod]
@@ -79,8 +79,8 @@ namespace CommandParser.Tests
         {
             string[] _command = { "qwerty" };
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual(m_errorText[0] + _command[0] + m_errorText[1], m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual(_mErrorText[0] + _command[0] + _mErrorText[1], _mConsoleOutput);
         }
 
         [TestMethod]
@@ -88,8 +88,8 @@ namespace CommandParser.Tests
         {
             string[] _command = { "-k" };
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual("", m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual("", _mConsoleOutput);
         }
 
         [TestMethod]
@@ -97,8 +97,8 @@ namespace CommandParser.Tests
         {
             string[] _command = { "-ping" };
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual(m_pingText, m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual(_mPingText, _mConsoleOutput);
         }
 
         [TestMethod]
@@ -106,8 +106,8 @@ namespace CommandParser.Tests
         {
             string[] _command = { "-print", "ab ra ca da bra"};
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
-            Assert.AreEqual("ab ra ca da bra", m_consoleOutput);
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
+            Assert.AreEqual("ab ra ca da bra", _mConsoleOutput);
         }
 
         [TestMethod]
@@ -115,10 +115,10 @@ namespace CommandParser.Tests
         {
             string[] _command = { "-k", "key1", "value1"};
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
 
             string _rightTest = _command[1] + " - " + _command[2];
-            Assert.AreEqual(_rightTest, m_consoleOutput);
+            Assert.AreEqual(_rightTest, _mConsoleOutput);
         }
 
         [TestMethod]
@@ -126,10 +126,10 @@ namespace CommandParser.Tests
         {
             string[] _command = { "-k", "key"};
             Program.Main(_command);
-            m_consoleOutput = m_writer.GetStringBuilder().ToString().Trim();
+            _mConsoleOutput = _mWriter.GetStringBuilder().ToString().Trim();
 
             string _rightTest = _command[1] + " - null";
-            Assert.AreEqual(_rightTest, m_consoleOutput);
+            Assert.AreEqual(_rightTest, _mConsoleOutput);
         }
     }
 }

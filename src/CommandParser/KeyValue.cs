@@ -8,44 +8,44 @@ namespace CommandParser
 {
     class KeyValue : Command
     {
-        List<KeyValuePair<string, string>> m_list;
+        Dictionary<string, string> _mPairs;
         private const string NULL = "null";
 
         public KeyValue()
         {
-            m_list = new List<KeyValuePair<string, string>>();
+            _mPairs = new Dictionary<string, string>();
         }
 
         public override void Execute()
         {
-            foreach (var _element in m_list)
+            foreach (var element in _mPairs)
             {
-                Console.WriteLine("{0} - {1}", _element.Key, _element.Value);
+                Console.WriteLine("{0} - {1}", element.Key, element.Value);
             }
         }
 
         public override void AddValue(string i_text)
         {
-            string _key;
-            string _value;
+            string key;
+            string value;
 
-            if (isPairFilled())
+            if (IsPairFilled())
             {
-                _key = m_list.Last().Key;
-                _value = i_text;
-                m_list.Remove(m_list.Last());
+                key = _mPairs.Last().Key;
+                value = i_text;
+                _mPairs.Remove(_mPairs.Last().Key);
             }
             else
             {
-                _key = i_text;
-                _value = NULL;
+                key = i_text;
+                value = NULL;
             }
-            m_list.Add(new KeyValuePair<string, string>(_key, _value));
+            _mPairs.Add(key, value);
         }
 
-        private bool isPairFilled()
+        private bool IsPairFilled()
         {
-            return m_list.Count > 0 && String.Compare(m_list.Last().Value, NULL) == 0;
+            return _mPairs.Count > 0 && String.Compare(_mPairs.Last().Value, NULL) == 0;
         }
     }
 }

@@ -8,18 +8,18 @@ namespace CommandParser
 {
     class Print : Command
     {
-        private string m_text;
+        private string _mText;
 
         public override void Execute()
         {
-            Console.WriteLine(m_text);
+            Console.WriteLine(_mText);
         }
 
         public override void AddValue(string i_str)
         {
-            if (m_text != null) m_text += " ";
+            if (_mText != null) _mText += " ";
 
-            m_text += i_str;
+            _mText += i_str;
         }
     }
 }
