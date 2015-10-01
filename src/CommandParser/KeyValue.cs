@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommandParser
 {
     class KeyValue : Command
     {
-        Dictionary<string, string> _mPairs;
+        readonly Dictionary<string, string> _mPairs;
         private const string NULL = "null";
 
         public KeyValue()
@@ -24,7 +22,7 @@ namespace CommandParser
             }
         }
 
-        public override void AddValue(string i_text)
+        public override void AddValue(string text)
         {
             string key;
             string value;
@@ -32,12 +30,12 @@ namespace CommandParser
             if (IsPairFilled())
             {
                 key = _mPairs.Last().Key;
-                value = i_text;
+                value = text;
                 _mPairs.Remove(_mPairs.Last().Key);
             }
             else
             {
-                key = i_text;
+                key = text;
                 value = NULL;
             }
             _mPairs.Add(key, value);

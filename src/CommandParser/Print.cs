@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommandParser
 {
@@ -15,11 +11,10 @@ namespace CommandParser
             Console.WriteLine(_mText);
         }
 
-        public override void AddValue(string i_str)
+        public override void AddValue(string str)
         {
             if (_mText != null) _mText += " ";
-
-            _mText += i_str;
+            _mText += str;
         }
     }
 }

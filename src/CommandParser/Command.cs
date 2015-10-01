@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CommandParser
+﻿namespace CommandParser
 {
-    abstract class Command
+    public abstract class Command
     {
         public abstract void Execute();
-        public abstract void AddValue(string i_str);
+        public abstract void AddValue(string str);
     }
 }

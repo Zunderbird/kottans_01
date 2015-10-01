@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommandParser
 {
@@ -15,7 +11,7 @@ namespace CommandParser
                               "-ping \t\t\t Pinging\n" +
                               "-print <message> \t Print a message");
         }
-        public override void AddValue(string i_str)
+        public override void AddValue(string str)
         {
         }
     }
